@@ -1,4 +1,4 @@
-Now in Android App
+MVI
 ==================
 
 It is a **work in progress** project.
