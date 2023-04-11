@@ -16,3 +16,4 @@ rootProject.name = "MVI"
 include ':app'
 include ':data-remote'
 include ':data-repository'
+include ':core'
