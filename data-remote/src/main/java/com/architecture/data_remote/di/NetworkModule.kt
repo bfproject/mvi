@@ -1,6 +1,7 @@
 package com.architecture.data_remote.di
 
 import com.architecture.data_remote.BuildConfig
+import com.architecture.data_remote.api.market.MarketService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -49,5 +50,10 @@ object NetworkModule {
         .client(okHttpClient)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
+
+    @Provides
+    @Singleton
+    fun provideMarketService(retrofit: Retrofit): MarketService =
+        retrofit.create(MarketService::class.java)
 
 }
