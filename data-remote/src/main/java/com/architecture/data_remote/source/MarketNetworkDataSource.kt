@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface MarketNetworkDataSource {
 
-    fun getAssetList(): Flow<List<MarketApiModel>>
+    suspend fun getAssetList(): List<MarketApiModel>
 
 }

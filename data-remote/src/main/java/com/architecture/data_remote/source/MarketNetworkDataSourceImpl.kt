@@ -9,8 +9,6 @@ import kotlinx.coroutines.flow.flow
 class MarketNetworkDataSourceImpl @Inject constructor(private val marketService: MarketService) :
     MarketNetworkDataSource {
 
-    override fun getAssetList(): Flow<List<MarketApiModel>> = flow {
-        marketService.getAssetList()
-    }
+    override suspend fun getAssetList(): List<MarketApiModel> = marketService.getAssetList()
 
 }
