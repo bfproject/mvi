@@ -49,12 +49,14 @@ android {
 }
 
 dependencies {
+    implementation project(":feature-market")
+
     def composeBom = platform("androidx.compose:compose-bom:${versions.composeBom}")
     implementation composeBom
     androidTestImplementation composeBom
 
     implementation "androidx.core:core-ktx:${versions.coreKtx}"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycleRuntimeKtx}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
     implementation "androidx.activity:activity-compose:${versions.activityCompose}"
     implementation "androidx.compose.ui:ui-tooling-preview"
     implementation "androidx.compose.material3:material3"
