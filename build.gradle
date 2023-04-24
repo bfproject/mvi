@@ -7,7 +7,10 @@ buildscript {
             'hiltAndroid' : '2.45',
             'junit' : '4.13.2',
             'junitAndroid' : '1.1.5',
-            'lifecycleRuntimeKtx' : '2.6.1'
+            'lifecycleRuntimeKtx' : '2.6.1',
+            'moshi' : '1.14.0',
+            'okhttp' : '4.10.0',
+            'retrofit' : '2.9.0'
     ]
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
