@@ -35,15 +35,37 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.4'
+    }
 }
 
 dependencies {
+    implementation project(":core")
+    implementation project (":data-repository")
+
+    def composeBom = platform("androidx.compose:compose-bom:${versions.composeBom}")
+    implementation composeBom
+    androidTestImplementation composeBom
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.lifecycle}"
+    implementation "androidx.activity:activity-compose:${versions.activityCompose}"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.compose.material3:material3"
+
     implementation "com.google.dagger:hilt-android:${versions.hiltAndroid}"
     kapt "com.google.dagger:hilt-compiler:${versions.hiltAndroid}"
 
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:${versions.junitAndroid}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.expresoCore}"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
 }
 
 // Allow references to generated code
